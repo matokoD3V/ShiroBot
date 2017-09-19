@@ -23,6 +23,9 @@ public class GetGirl extends Command {
     @Override
     protected void execute(CommandEvent event)
     {
+
+        //Gets random anime girl picture.
+
         Document d= null;
         try {
             d = Jsoup.connect("http://weheartit.com/pictures/cute%20anime%20girl?landing=true&page=3&before=297357460").get();
@@ -39,9 +42,12 @@ public class GetGirl extends Command {
             track++;
         }
 
+        //Image with embed.
         EmbedBuilder embed = new EmbedBuilder();
         embed.setImage(imgs.get(ThreadLocalRandom.current().nextInt(0, imgs.size() + 1)));
         event.getTextChannel().sendMessage(embed.build()).queue();
+
+        //Image without embed.
         //event.getTextChannel().sendMessage(imgs.get(ThreadLocalRandom.current().nextInt(0, imgs.size() + 1))).queue();
     }
 }
