@@ -39,6 +39,7 @@ public class ShiroBot {
                         new GetGirl(),
                         new JoinVoice(),
                         new LeaveVoice(),
+                        new UrbanDictionary(),
                         new PingCommand(),
                         new ShutdownCommand());
 
