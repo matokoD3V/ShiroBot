@@ -41,6 +41,7 @@ public class ShiroBot {
                         new LeaveVoice(),
                         new UrbanDictionary(),
                         new PingCommand(),
+                        new GetAnime(),
                         new ShutdownCommand());
 
         // start getting a bot account set up
