@@ -33,6 +33,7 @@ public class GetGirl extends Command {
             e.printStackTrace();
         }
 
+
         List<String> imgs = new ArrayList<String>();
         int track = 0;
 

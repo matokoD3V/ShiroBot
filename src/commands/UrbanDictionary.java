@@ -41,6 +41,7 @@ public class UrbanDictionary extends Command {
         }
 
         embed.setAuthor("Urban Dictionary", url, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQvkQc0gf4VU7lkIxyj92w8LhWbSRLO6YZkB2If-5fS-UxE8A3kCq9w-8");
+        embed.setColor(java.awt.Color.RED);
         embed.addField("Word", word, false);
         embed.addField("Definition", definition, false);
         embed.addField("Example", example, false);

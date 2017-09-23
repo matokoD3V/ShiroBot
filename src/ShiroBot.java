@@ -18,17 +18,19 @@ import net.dv8tion.jda.core.OnlineStatus;
 import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.exceptions.RateLimitedException;
+import utils.Listener;
 
 public class ShiroBot {
     public static void main(String[] args) throws IOException, LoginException, IllegalArgumentException, RateLimitedException
     {
-        
+
         List<String> list = Files.readAllLines(Paths.get("config.txt"));
         String token = list.get(0);
         String ownerId = list.get(1);
 
         EventWaiter waiter = new EventWaiter();
         CommandClientBuilder client = new CommandClientBuilder();
+        Listener listener = new Listener();
 
         client.useDefaultGame();
         client.setOwnerId(ownerId);
@@ -47,6 +49,7 @@ public class ShiroBot {
                         new UrbanDictionary(),
                         new PingCommand(),
                         new GetAnime(),
+                        new GetRanks(),
                         new ShutdownCommand());
 
         // start getting a bot account set up
@@ -59,6 +62,7 @@ public class ShiroBot {
                 // add the listeners
                 .addEventListener(waiter)
                 .addEventListener(client.build())
+                .addEventListener(listener)
                 // start it up!
                 .buildAsync();
     }

@@ -42,7 +42,6 @@ public class GetAnime extends Command {
         embed.setDescription(show.getSynopsis());
         embed.addField("Episodes: ", show.getEpisodes(), true);
         event.getTextChannel().sendMessage(embed.build()).queue();
-
     }
 
 

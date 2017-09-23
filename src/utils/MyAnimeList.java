@@ -88,7 +88,7 @@ public class MyAnimeList {
         }
         track = 0;
 
-        
+
         /*
         In div.js-scrollfix-bottom
          */
