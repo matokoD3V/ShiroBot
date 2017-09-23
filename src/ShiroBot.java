@@ -49,6 +49,7 @@ public class ShiroBot {
                         new UrbanDictionary(),
                         new PingCommand(),
                         new GetAnime(),
+                        new GetBitcoin(),
                         new GetRanks(),
                         new ShutdownCommand());
 

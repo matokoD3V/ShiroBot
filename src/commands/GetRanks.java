@@ -6,7 +6,11 @@ import javafx.scene.paint.Color;
 import net.dv8tion.jda.core.EmbedBuilder;
 import utils.MySQL;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.*;
+import java.util.List;
 
 public class GetRanks extends Command {
     public GetRanks() {
@@ -18,7 +22,17 @@ public class GetRanks extends Command {
     protected void execute(CommandEvent event) {
 
         String myDriver = "org.gjt.mm.mysql.Driver";
-        String myUrl = "jdbc:mysql://localhost/shirobot";
+        String myUrl = "jdbc:mysql://localhost/shirobot?autoReconnect=true&useSSL=false";
+
+        List<String> list = null;
+        try {
+            list = Files.readAllLines(Paths.get("config.txt"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String username = list.get(2);
+        String password = list.get(3);
+
         try {
             Class.forName(myDriver);
         } catch (ClassNotFoundException e) {
@@ -26,7 +40,7 @@ public class GetRanks extends Command {
         }
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection(myUrl, "shirobot", "Inwardbend1");
+            conn = DriverManager.getConnection(myUrl, username, password);
         } catch (SQLException e) {
             e.printStackTrace();
         }
