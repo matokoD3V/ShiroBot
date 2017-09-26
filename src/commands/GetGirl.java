@@ -23,6 +23,11 @@ public class GetGirl extends Command {
     @Override
     protected void execute(CommandEvent event)
     {
+        if(event.getMember().getUser().getId().equals("213400627038912523")) {
+            event.getTextChannel().sendMessage("shut the fuck up kid").queue();
+            return;
+        }
+
 
         //Gets random anime girl picture.
 
@@ -43,12 +48,13 @@ public class GetGirl extends Command {
             track++;
         }
 
+        System.out.println(imgs.size());
         //Image with embed.
         EmbedBuilder embed = new EmbedBuilder();
         embed.setImage(imgs.get(ThreadLocalRandom.current().nextInt(0, imgs.size() + 1)));
-        event.getTextChannel().sendMessage(embed.build()).queue();
+        //  event.getTextChannel().sendMessage(embed.build()).queue();
 
         //Image without embed.
-        //event.getTextChannel().sendMessage(imgs.get(ThreadLocalRandom.current().nextInt(0, imgs.size() + 1))).queue();
+        event.getTextChannel().sendMessage(imgs.get(ThreadLocalRandom.current().nextInt(0, imgs.size() + 1))).queue();
     }
 }

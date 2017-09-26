@@ -19,6 +19,7 @@ import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.exceptions.RateLimitedException;
 import utils.Listener;
+import utils.SetPlaying;
 
 public class ShiroBot {
     public static void main(String[] args) throws IOException, LoginException, IllegalArgumentException, RateLimitedException
@@ -31,6 +32,7 @@ public class ShiroBot {
         EventWaiter waiter = new EventWaiter();
         CommandClientBuilder client = new CommandClientBuilder();
         Listener listener = new Listener();
+        SetPlaying setPlaying = new SetPlaying();
 
         client.useDefaultGame();
         client.setOwnerId(ownerId);
@@ -39,7 +41,7 @@ public class ShiroBot {
 
                 // command to show information about the bot
                 new AboutCommand(Color.BLUE, "a retarded weeb bot.",
-                        new String[]{"Niggers","Chicken","Watermelon"},
+                        new String[]{"Ranks","Urban Dictionary Command","MyAnimeList Command"},
                         new Permission[]{Permission.ADMINISTRATOR}),
                         new SetName(),
                         new SendBroadcast(),
@@ -51,6 +53,9 @@ public class ShiroBot {
                         new GetAnime(),
                         new GetBitcoin(),
                         new GetRanks(),
+                        new Enable(),
+                        new Disable(),
+                        new getSettings(),
                         new ShutdownCommand());
 
         // start getting a bot account set up
@@ -59,11 +64,11 @@ public class ShiroBot {
                 .setToken(token)
                 // set the game for when the bot is loading
                 .setStatus(OnlineStatus.DO_NOT_DISTURB)
-                .setGame(Game.of("loading..."))
                 // add the listeners
                 .addEventListener(waiter)
                 .addEventListener(client.build())
                 .addEventListener(listener)
+                .addEventListener(setPlaying)
                 // start it up!
                 .buildAsync();
     }

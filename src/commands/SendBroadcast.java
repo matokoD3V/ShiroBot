@@ -11,11 +11,14 @@ public class SendBroadcast extends Command {
     {
         this.name = "broadcast";
         this.help = "sends a message to all discord servers.";
+        this.arguments = "<message>";
     }
 
     @Override
     protected void execute(CommandEvent event)
     {
+        if(!event.getMember().getUser().getId().equals("235995758896087041"))
+            return;
         Message msg = event.getMessage();
         Guild[] guilds = event.getJDA().getGuilds().toArray(new Guild[0]);
         String broadcast = msg.getContent().substring(12, msg.getContent().length());

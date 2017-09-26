@@ -7,17 +7,26 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import utils.MySQL;
 
+import java.awt.*;
 import java.io.IOException;
 
 public class UrbanDictionary extends Command {
     public UrbanDictionary() {
         this.name = "urban";
         this.help = "gets definition, url, and example of a word on UrbanDictionary";
+        this.arguments = "<word>";
     }
 
     @Override
     protected void execute(CommandEvent event) {
+
+        MySQL db = new MySQL();
+        if(db.getToggleInfo("urban", event.getGuild()) == 0) {
+            return;
+        }
+
         String target;
         String definition = "";
         String example = "";
@@ -41,7 +50,7 @@ public class UrbanDictionary extends Command {
         }
 
         embed.setAuthor("Urban Dictionary", url, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQvkQc0gf4VU7lkIxyj92w8LhWbSRLO6YZkB2If-5fS-UxE8A3kCq9w-8");
-        embed.setColor(java.awt.Color.RED);
+        embed.setColor(Color.decode("#FB8D00"));
         embed.addField("Word", word, false);
         embed.addField("Definition", definition, false);
         embed.addField("Example", example, false);

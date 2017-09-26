@@ -8,6 +8,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import utils.MyAnimeList;
+import utils.MySQL;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -19,10 +20,16 @@ public class GetAnime extends Command {
     public GetAnime() {
         this.name = "anime";
         this.help = "gets information on an anime from MAL";
+        this.arguments = "<name of anime>";
     }
 
     @Override
     protected void execute(CommandEvent event) {
+        MySQL db = new MySQL();
+        if(db.getToggleInfo("anime", event.getGuild()) == 0) {
+            return;
+        }
+
         String msg = event.getMessage().getContent();
         String target = msg.substring(8, msg.length());
         String url = getURL(target);

@@ -21,6 +21,12 @@ public class GetRanks extends Command {
     @Override
     protected void execute(CommandEvent event) {
 
+
+        MySQL db = new MySQL();
+        if(db.getToggleInfo("ranks", event.getGuild()) == 0) {
+            return;
+        }
+
         String myDriver = "org.gjt.mm.mysql.Driver";
         String myUrl = "jdbc:mysql://localhost/shirobot?autoReconnect=true&useSSL=false";
 
@@ -74,8 +80,8 @@ public class GetRanks extends Command {
             e.printStackTrace();
         }
 
-        embed.setAuthor("Top 5 Leaderboards for " +event.getGuild().getName(), null,null);
-        embed.setColor(java.awt.Color.RED);
+        embed.setAuthor("Top 5 Leaderboards for " +event.getGuild().getName(), null,"http://lettersandnumbers.org/freealphabetletters/blue/alphabet_letter_l.jpg");
+        embed.setColor(java.awt.Color.decode("#1F98E7"));
         for(int i = 0; i < 5; i++) {
             embed.addField("#"+(i+1)+" "+names[i] + " | Level " + levels[i], "Experience: `"+exps[i]+"/"+(levels[i]*20)+"`", false);
         }

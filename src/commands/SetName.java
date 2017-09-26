@@ -12,6 +12,7 @@ public class SetName extends Command {
     {
         this.name = "setname";
         this.help = "sets the nickname of the bot";
+        this.arguments = "<name>";
     }
 
     @Override
