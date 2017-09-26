@@ -12,10 +12,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.TimerTask;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Listener extends ListenerAdapter {
 
     public void onMessageReceived(MessageReceivedEvent event) {
+
+
 
         System.out.println(event.getGuild().getName() + " | " + event.getTextChannel().getName() + " | " + event.getMember().getEffectiveName() + ": " + event.getMessage().getContent());
         if(event.getMember().getUser().isBot())
@@ -42,16 +45,18 @@ public class Listener extends ListenerAdapter {
                 e.printStackTrace();
             }
 
+            Tools t = new Tools();
             memberOrigLevel = memberLevel;
-            memberExp += 1;
-            requiredExp = memberLevel * 20;
+            memberExp += ThreadLocalRandom.current().nextInt(15, 25 + 1);
+            requiredExp = t.getRequiredExp(memberLevel);
+
             while (memberExp > requiredExp) {
                 memberLevel++;
-                requiredExp += memberLevel * 20;
+                requiredExp = t.getRequiredExp(memberLevel);
             }
 
             if (memberOrigLevel < memberLevel) {
-                event.getTextChannel().sendMessage("`" + event.getMember().getEffectiveName() + "` has leveled up to level `" + memberLevel + "`!").queue();
+                event.getTextChannel().sendMessage("" + event.getMember().getEffectiveName() + " has leveled up to Lvl." + memberLevel + "!").queue();
             }
 
             db.exQuery("UPDATE users SET userLevel=" + memberLevel + ", userExp=" + memberExp + " WHERE userID='" + event.getMember().getUser().getId() + "' AND guildID='" + event.getGuild().getId() + "';");

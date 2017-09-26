@@ -5,6 +5,7 @@ import com.jagrosh.jdautilities.commandclient.CommandEvent;
 import javafx.scene.paint.Color;
 import net.dv8tion.jda.core.EmbedBuilder;
 import utils.MySQL;
+import utils.Tools;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -82,8 +83,11 @@ public class GetRanks extends Command {
 
         embed.setAuthor("Top 5 Leaderboards for " +event.getGuild().getName(), null,"http://lettersandnumbers.org/freealphabetletters/blue/alphabet_letter_l.jpg");
         embed.setColor(java.awt.Color.decode("#1F98E7"));
+
+        Tools t = new Tools();
+
         for(int i = 0; i < 5; i++) {
-            embed.addField("#"+(i+1)+" "+names[i] + " | Level " + levels[i], "Experience: `"+exps[i]+"/"+(levels[i]*20)+"`", false);
+            embed.addField("#"+(i+1)+" "+names[i] + " | Level " + levels[i], "Experience: `"+exps[i]+"/"+t.getRequiredExp(levels[i])+"`", false);
         }
 
         event.getTextChannel().sendMessage(embed.build()).queue();
