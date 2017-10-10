@@ -2,12 +2,15 @@ package commands;
 
 import com.jagrosh.jdautilities.commandclient.Command;
 import com.jagrosh.jdautilities.commandclient.CommandEvent;
+import com.sethsutopia.utopiai.myanimelist.Anime;
+import com.sethsutopia.utopiai.myanimelist.MyAnimeList;
+import com.sethsutopia.utopiai.restful.RestfulException;
 import net.dv8tion.jda.core.EmbedBuilder;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import utils.MyAnimeList;
+import utils.MAL;
 import utils.MySQL;
 
 import java.io.IOException;
@@ -29,53 +32,39 @@ public class GetAnime extends Command {
         if(db.getToggleInfo("anime", event.getGuild()) == 0) {
             return;
         }
-
-        String msg = event.getMessage().getContent();
-        String target = msg.substring(8, msg.length());
-        String url = getURL(target);
-
-        Document d = null;
-        try {
-            d = Jsoup.connect(url).get();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        MyAnimeList show = new MyAnimeList(d);
+        
+        //Don't hack me... >:(
+        MyAnimeList mal = new MyAnimeList("ShiroBot", "Inwardbend34382");
         EmbedBuilder embed = new EmbedBuilder();
+        String target = event.getMessage().getContent().substring(8);
 
-        embed.setAuthor(show.getName(), url, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2UPzEO0GZIta2q3jSTZTK1L4ZSix5qihfHvetFXPnwyHV0WAd6w");
-        embed.setThumbnail(show.getImg());
-        embed.setDescription(show.getSynopsis());
-        embed.addField("Episodes: ", show.getEpisodes(), true);
-        event.getTextChannel().sendMessage(embed.build()).queue();
-    }
-
-
-    private String getURL(String name) {
-        String url = null;
         try {
-            url = URLEncoder.encode(name, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
+            Anime anime = mal.getAnime(target);
+            MAL animeTwo = new MAL(anime.getId());
+
+            embed.setAuthor(anime.getTitle(), "https://myanimelist.net/anime/"+anime.getId(), "https://myanimelist.cdn-dena.com/img/sp/icon/apple-touch-icon-256.png");
+            embed.setThumbnail(anime.getImageUrl());
+            embed.setTitle("Description");
+            embed.setDescription(anime.getSynopsis());
+            embed.addField("Ranking Info",
+                    "Score: " + anime.getScore() + "/10.00\n" +
+                    "Score Ranking: " + animeTwo.getRanked()+"\n"+
+                    "Popularity Ranking: "+animeTwo.getPopularity()+"\n"+
+                    "Members: "+animeTwo.getMembers(),true);
+            embed.addField("Information",
+                    "Type: "+anime.getType()+"\n"+
+                    "Status: "+anime.getStatus()+"\n"+
+                    "Episodes: "+anime.getNumOfEpisodes()+"\n"+
+                    "Started: "+anime.getStartDate()+"\n"+
+                    "Ended: "+anime.getEndDate(),true);
+            embed.setFooter("Uses Information from MyAnimeList.net", null);
+            embed.setColor(java.awt.Color.decode("#1F98E7"));
+
+            event.getTextChannel().sendMessage(embed.build()).queue();
+        } catch (RestfulException e) {
+            event.getTextChannel().sendMessage("I couldn't find that anime!").queue();
             e.printStackTrace();
         }
-
-        Document d = null;
-        try {
-            d = Jsoup.connect("https://myanimelist.net/search/all?q="  + url).get();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        int track = 0;
-        Elements body=d.select("div.list.di-t.w100");
-        String URL = null;
-        for(Element ele:body) {
-            if(track > 0)
-                break;
-            URL = ele.getElementsByTag("a").attr("href");
-            track++;
-        }
-        return URL;
     }
+
 }

@@ -1,5 +1,6 @@
 package utils;
 
+import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -37,12 +38,16 @@ import java.io.IOException;
 
  */
 
-public class MyAnimeList {
+public class MAL {
     private String ranked, popularity, members, name, episodes, score, synopsis, genres, status, aired, type, imgURL;
     private Document d;
 
-    public MyAnimeList(Document doc) {
-        d = doc;
+    public MAL(int ID) {
+        try {
+            d = Jsoup.connect("https://myanimelist.net/anime/"+ID).get();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         setRanked();
     }
 
