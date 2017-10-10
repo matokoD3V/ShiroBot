@@ -39,12 +39,15 @@ public class Disable extends Command {
             // create the java statement
             PreparedStatement ps = conn.prepareStatement(query);
             ps.execute(query);
+            event.getTextChannel().sendMessage("Successfully disabled `" + target + "`.").queue();
         }
 
         catch (Exception e)
         {
+            event.getTextChannel().sendMessage("There was an issue disabling `" + target + "`.").queue();
             System.err.println("Got an exception! ");
-            System.err.println(e.getMessage());
+            //System.err.println(e.getMessage());
         }
+
     }
 }

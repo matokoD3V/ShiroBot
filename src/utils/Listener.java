@@ -18,15 +18,9 @@ public class Listener extends ListenerAdapter {
 
     public void onMessageReceived(MessageReceivedEvent event) {
 
-
-
         System.out.println(event.getGuild().getName() + " | " + event.getTextChannel().getName() + " | " + event.getMember().getEffectiveName() + ": " + event.getMessage().getContent());
         if(event.getMember().getUser().isBot())
             return;
-        if(event.getMember().getUser().getId().equals("213400627038912523")) {
-            event.getTextChannel().sendMessage("shut the fuck up kid").queue();
-            return;
-        }
 
         MySQL db = new MySQL();
 

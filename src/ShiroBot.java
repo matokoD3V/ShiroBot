@@ -56,6 +56,7 @@ public class ShiroBot {
                         new Enable(),
                         new Disable(),
                         new getSettings(),
+                        new GetOsuProfile(),
                         new ShutdownCommand());
 
         // start getting a bot account set up

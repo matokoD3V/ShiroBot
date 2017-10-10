@@ -34,18 +34,21 @@ public class Enable extends Command {
             Class.forName(myDriver);
             Connection conn = DriverManager.getConnection(myUrl, username, password);
 
+
             String query = "UPDATE guilds SET "+target.toLowerCase()+"Toggle = '1' WHERE guildID='"+event.getGuild().getId()+"';";
+
 
             // create the java statement
             PreparedStatement ps = conn.prepareStatement(query);
             ps.execute(query);
-
+            event.getTextChannel().sendMessage("Successfully enabled `" + target + "`.").queue();
         }
 
         catch (Exception e)
         {
+            event.getTextChannel().sendMessage("There was an issue enabling `" + target + "`.").queue();
             System.err.println("Got an exception! ");
-            System.err.println(e.getMessage());
+            //System.err.println(e.getMessage());
         }
     }
 }
