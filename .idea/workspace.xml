@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec46c94a-596b-4d66-98fb-0f5fb2ea91cd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/MAL.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/utils/MyAnimeList.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/commands/GetAnime.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/utils/MyAnimeList.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/GetOsuProfile.class" afterPath="$PROJECT_DIR$/target/classes/commands/GetOsuProfile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/GetAnime.java" afterPath="$PROJECT_DIR$/src/commands/GetAnime.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/GetOsuProfile.java" afterPath="$PROJECT_DIR$/src/commands/GetOsuProfile.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetAnime.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GetAnime.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/commands/GetAnime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="34" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+            <state relative-caret-position="552">
+              <caret line="58" column="31" lean-forward="false" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetOsuProfile.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GetOsuProfile.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/commands/GetOsuProfile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="272">
+              <caret line="49" column="71" lean-forward="true" selection-start-line="49" selection-start-column="71" selection-end-line="49" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -198,10 +193,10 @@
         <option value="$PROJECT_DIR$/src/utils/CountryCodes.java" />
         <option value="$PROJECT_DIR$/src/commands/GetOsuSig.java" />
         <option value="$PROJECT_DIR$/src/ShiroBot.java" />
-        <option value="$PROJECT_DIR$/src/commands/GetOsuProfile.java" />
         <option value="$PROJECT_DIR$/src/utils/MyAnimeList.java" />
         <option value="$PROJECT_DIR$/src/utils/MAL.java" />
         <option value="$PROJECT_DIR$/src/commands/GetAnime.java" />
+        <option value="$PROJECT_DIR$/src/commands/GetOsuProfile.java" />
       </list>
     </option>
   </component>
@@ -799,16 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/commands/GetOsuProfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/MyAnimeList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
@@ -871,8 +856,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/commands/GetAnime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+        <state relative-caret-position="552">
+          <caret line="58" column="31" lean-forward="false" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commands/GetOsuProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="49" column="71" lean-forward="true" selection-start-line="49" selection-start-column="71" selection-end-line="49" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

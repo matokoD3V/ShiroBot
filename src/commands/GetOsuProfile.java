@@ -16,7 +16,7 @@ import java.text.DecimalFormat;
 
 public class GetOsuProfile extends Command {
     public GetOsuProfile() {
-        this.name = "osu_profile";
+        this.name = "osu";
         this.help = "gets osu profile of a specific user";
     }
 
@@ -27,11 +27,12 @@ public class GetOsuProfile extends Command {
         String key = "319e7d936f399ab7663781d5bf19858fdc04b2a8";
         OSU osu = new OSU(key);
         DecimalFormat df2 = new DecimalFormat( "#,###,###,###");
+        DecimalFormat df3 = new DecimalFormat( "#,###,###,##0.00");
         CountryCodes cc = new CountryCodes();
 
         //EmojiParser.parseToUnicode(":"+player.getCountry().toLowerCase()+":"), player.getProfileUrl()
 
-        String target = event.getMessage().getContent().substring(14);
+        String target = event.getMessage().getContent().substring(6);
         try {
             OSUPlayer player = osu.getUser(target, OsuGameMode.OSU);
             EmbedBuilder embed = new EmbedBuilder();
@@ -39,7 +40,7 @@ public class GetOsuProfile extends Command {
             embed.setColor(java.awt.Color.decode("#FF66AA"));
 
             embed.addField("Performance",
-                    "**PP:** "+String.format("%.2f",player.getPPRaw())+" PP\n"+
+                    "**PP:** "+df3.format(player.getPPRaw())+" PP\n"+
                     "**Level:** "+String.format("%.2f",player.getLevel())+"\n"+
                     "**Rank:** #"+df2.format(player.getPPRank())+"\n"+
                     "**Country Rank:** #"+df2.format(player.getPPCountryRank())+"\t"+"\n", true);
@@ -51,9 +52,9 @@ public class GetOsuProfile extends Command {
                     "**50s:** "+df2.format(player.getCount50()), true);
 
             embed.addField("Map Ranks",
-                    "**SS:** "+player.getCountRankSS()+"\n"+
-                    "**S:** "+player.getCountRankS()+"\n"+
-                    "**A:** "+player.getCountRankA()+"\n", true);
+                    "**SS:** "+df2.format(player.getCountRankSS())+"\n"+
+                    "**S:** "+df2.format(player.getCountRankS())+"\n"+
+                    "**A:** "+df2.format(player.getCountRankA())+"\n", true);
 
             embed.addField("\tInformation",
                     "**Country:** " + player.getCountry() +" "+ EmojiParser.parseToUnicode(":"+player.getCountry().toLowerCase()+":")+"\n"+
@@ -62,6 +63,8 @@ public class GetOsuProfile extends Command {
                             "**Play Count:** "+df2.format(player.getPlayCount()), true);
 
             embed.setThumbnail(player.getAvatarUrl());
+            embed.setFooter("Download osu! | https://osu.ppy.sh/p/download", null);
+
             event.getTextChannel().sendMessage(embed.build()).queue();
         } catch (RestfulException e) {
             e.printStackTrace();
