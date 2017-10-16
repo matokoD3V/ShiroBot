@@ -26,8 +26,8 @@ public class GetOsuProfile extends Command {
         //Suck my dick, not removing key.
         String key = "319e7d936f399ab7663781d5bf19858fdc04b2a8";
         OSU osu = new OSU(key);
-        DecimalFormat df2 = new DecimalFormat( "#,###,###,###");
-        DecimalFormat df3 = new DecimalFormat( "#,###,###,##0.00");
+        DecimalFormat df2 = new DecimalFormat( "#,###,###,###"); //Formats whole number with ,
+        DecimalFormat df3 = new DecimalFormat( "#,###,###,##0.00"); //Formats decimal number with ,
         CountryCodes cc = new CountryCodes();
 
         //EmojiParser.parseToUnicode(":"+player.getCountry().toLowerCase()+":"), player.getProfileUrl()

@@ -42,10 +42,22 @@ public class GetAnime extends Command {
             Anime anime = mal.getAnime(target);
             MAL animeTwo = new MAL(anime.getId());
 
-            embed.setAuthor(anime.getTitle() + " | " + anime.getEnglishTitle(), "https://myanimelist.net/anime/"+anime.getId(), "https://myanimelist.cdn-dena.com/img/sp/icon/apple-touch-icon-256.png");
+
+
+            if(!anime.getTitle().equals(anime.getEnglishTitle()))
+                embed.setAuthor(anime.getTitle() + " ★ " + anime.getEnglishTitle(), "https://myanimelist.net/anime/"+anime.getId(), "https://myanimelist.cdn-dena.com/img/sp/icon/apple-touch-icon-256.png");
+            else
+                embed.setAuthor(anime.getTitle(), "https://myanimelist.net/anime/"+anime.getId(), "https://myanimelist.cdn-dena.com/img/sp/icon/apple-touch-icon-256.png");
+
             embed.setThumbnail(anime.getImageUrl());
-            embed.setTitle("Description");
+            embed.setTitle("Synopsis");
             embed.setDescription(anime.getSynopsis());
+
+
+            String endDate = "";
+            if(anime.getEndDate() == null) { endDate = "Unknown"; }
+            else { endDate = anime.getEndDate(); }
+
             embed.addField("Ranking Info",
                     "**Score:** " + anime.getScore() + "/10.00\n" +
                     "**Score Ranking:** " + animeTwo.getRanked()+"\n"+
@@ -56,7 +68,7 @@ public class GetAnime extends Command {
                     "**Status:** "+anime.getStatus()+"\n"+
                     "**Episodes:** "+anime.getNumOfEpisodes()+"\n"+
                     "**Started:** "+anime.getStartDate()+"\n"+
-                    "**Ended:** "+anime.getEndDate(),true);
+                    "**Ended:** " + endDate,true);
             embed.setFooter("Uses Information from MyAnimeList.net", null);
             embed.setColor(java.awt.Color.decode("#1F98E7"));
 

@@ -22,8 +22,13 @@ public class Listener extends ListenerAdapter {
         if(event.getMember().getUser().isBot())
             return;
 
+
+        //event.getTextChannel().sendMessage(event.getMessage().getCreationTime().toString()).queue();
+
         MySQL db = new MySQL();
 
+
+        //If ranks are enabled on the guild the message was sent from.
         if(db.getToggleInfo("ranks", event.getGuild()) == 1) {
             ResultSet memberinfo = db.getMemberInfo(event.getMember().getUser().getId(), event.getGuild());
             int memberExp = 0;

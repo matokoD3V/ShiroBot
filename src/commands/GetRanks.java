@@ -25,6 +25,7 @@ public class GetRanks extends Command {
 
         MySQL db = new MySQL();
         if(db.getToggleInfo("ranks", event.getGuild()) == 0) {
+            event.getTextChannel().sendMessage("Ranks are disabled.").queue();
             return;
         }
 
