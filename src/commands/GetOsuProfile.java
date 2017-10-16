@@ -56,7 +56,7 @@ public class GetOsuProfile extends Command {
                     "**S:** "+df2.format(player.getCountRankS())+"\n"+
                     "**A:** "+df2.format(player.getCountRankA())+"\n", true);
 
-            embed.addField("\tInformation",
+            embed.addField("Information",
                     "**Country:** " + player.getCountry() +" "+ EmojiParser.parseToUnicode(":"+player.getCountry().toLowerCase()+":")+"\n"+
                             "**Total:** "+player.getTotalScorePretty()+"\n"+
                             "**Ranked:** "+player.getRankedScorePretty()+"\n"+

@@ -23,6 +23,11 @@ public class PPListener implements OSUListener {
         ResultSet user = db.getOsuUserInfo(event.getPlayer().getUsername());
         Guild[] guilds = bot.getGuilds().toArray(new Guild[0]);
         System.out.println(">>>*** "+event.getDetails()+" ***<<<");
+
+        StringBuilder str = new StringBuilder(event.getDetails());
+        str.insert(0, '`');
+        str.insert(event.getDetails().indexOf(" just gained")+1, '`');
+
         try {
             while (user.next() == true) {
                 if(user.getInt("toggle") == 1) { //Runs for however many times the user is in the db.
@@ -31,19 +36,13 @@ public class PPListener implements OSUListener {
                         //Add text channel configuration support
                         if(guilds[i].getId().equals(user.getString("guildID"))) {
                             TextChannel[] channel = guilds[i].getTextChannels().toArray(new TextChannel[0]);
-                            channel[0].sendMessage(event.getDetails()).queue();
+                            channel[0].sendMessage(str.toString()).queue();
                         }
                     }
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-
-        for(int i = 0; i < guilds.length; i++)
-        {
-            if(guilds[i].getId().equals("320329790131535873"))
-                guilds[i].getTextChannelById("360937181948280843").sendMessage(event.getDetails()).queue();
         }
     }
 }

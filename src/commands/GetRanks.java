@@ -17,6 +17,7 @@ public class GetRanks extends Command {
     public GetRanks() {
         this.name = "ranks";
         this.help = "gets top5 leaderboard of ranks";
+        this.arguments = "<global> #Defaults to guild leaderboard";
     }
 
     @Override
@@ -53,7 +54,10 @@ public class GetRanks extends Command {
             e.printStackTrace();
         }
 
-        String query = "(SELECT * FROM users WHERE guildID='"+event.getGuild().getId()+"' ORDER BY userExp DESC LIMIT 5) ORDER BY userExp DESC;";
+        String query = null;
+        if(event.getArgs().equals("global")) {query = "(SELECT * FROM users ORDER BY userExp DESC LIMIT 5) ORDER BY userExp DESC;";}
+        else {query = "(SELECT * FROM users WHERE guildID='" + event.getGuild().getId() + "' ORDER BY userExp DESC LIMIT 5) ORDER BY userExp DESC;";}
+
         // create the java statement
         Statement st = null;
         ResultSet top10 = null;
@@ -67,30 +71,36 @@ public class GetRanks extends Command {
         EmbedBuilder embed = new EmbedBuilder();
         int[] levels = new int[10];
         String[] names = new String[10];
+        String[] guilds = new String[10];
         int[] exps = new int[10];
         int track = 0;
-
         try {
             while (top10.next() == true)
             {
                 levels[track] = top10.getInt("userLevel");
                 exps[track] = top10.getInt("userExp");
                 names[track] = top10.getString("username");
+                guilds[track] = top10.getString("guildID");
                 track++;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        embed.setAuthor("Top 5 Leaderboards for " +event.getGuild().getName(), null,"http://lettersandnumbers.org/freealphabetletters/blue/alphabet_letter_l.jpg");
-        embed.setColor(java.awt.Color.decode("#1F98E7"));
-
         Tools t = new Tools();
-
-        for(int i = 0; i < 5; i++) {
-            embed.addField("#"+(i+1)+" "+names[i] + " | Level " + levels[i], "Experience: `"+exps[i]+"/"+t.getRequiredExp(levels[i])+"`", false);
+        if(event.getArgs().equals("global")){
+            embed.setAuthor("Top 5 Leaderboards for All Servers", null,"http://lettersandnumbers.org/freealphabetletters/blue/alphabet_letter_l.jpg");
+            for(int i = 0; i < 5; i++) {
+                embed.addField("#"+(i+1)+" "+names[i] + " | Level " + levels[i] + " | "+event.getJDA().getGuildById(guilds[i]).getName(), "Experience: `"+exps[i]+"/"+t.getRequiredExp(levels[i])+"`", false);
+            }
         }
-
+        else {
+            embed.setAuthor("Top 5 Leaderboards for " +event.getGuild().getName(), null,"http://lettersandnumbers.org/freealphabetletters/blue/alphabet_letter_l.jpg");
+            for(int i = 0; i < 5; i++) {
+                embed.addField("#"+(i+1)+" "+names[i] + " | Level " + levels[i], "Experience: `"+exps[i]+"/"+t.getRequiredExp(levels[i])+"`", false);
+            }
+        }
+        embed.setColor(java.awt.Color.decode("#1F98E7"));
         event.getTextChannel().sendMessage(embed.build()).queue();
     }
 }

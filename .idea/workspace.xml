@@ -2,28 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec46c94a-596b-4d66-98fb-0f5fb2ea91cd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/commands/OSUFollow.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/commands/OSUUnFollow.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/commands/SetNotifierChannel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/commands/Test.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/PPListener.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_dv8tion_JDA_3_3_1_276.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_dv8tion_JDA_3_3_1_289.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ShiroBot.class" afterPath="$PROJECT_DIR$/target/classes/ShiroBot.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/GetAnime.class" afterPath="$PROJECT_DIR$/target/classes/commands/GetAnime.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/GetRanks.class" afterPath="$PROJECT_DIR$/target/classes/commands/GetRanks.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/utils/Listener.class" afterPath="$PROJECT_DIR$/target/classes/utils/Listener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/utils/MAL.class" afterPath="$PROJECT_DIR$/target/classes/utils/MAL.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/utils/MySQL.class" afterPath="$PROJECT_DIR$/target/classes/utils/MySQL.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShiroBot.iml" afterPath="$PROJECT_DIR$/ShiroBot.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ShiroBot.java" afterPath="$PROJECT_DIR$/src/ShiroBot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/GetAnime.java" afterPath="$PROJECT_DIR$/src/commands/GetAnime.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/GetOsuProfile.java" afterPath="$PROJECT_DIR$/src/commands/GetOsuProfile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/GetRanks.java" afterPath="$PROJECT_DIR$/src/commands/GetRanks.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/Listener.java" afterPath="$PROJECT_DIR$/src/utils/Listener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/MAL.java" afterPath="$PROJECT_DIR$/src/utils/MAL.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/MySQL.java" afterPath="$PROJECT_DIR$/src/utils/MySQL.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/PPListener.java" afterPath="$PROJECT_DIR$/src/utils/PPListener.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,18 +20,18 @@
       <file leaf-file-name="ShiroBot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ShiroBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="65" column="41" lean-forward="false" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+            <state relative-caret-position="372">
+              <caret line="79" column="45" lean-forward="true" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MAL.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/MAL.java">
+      <file leaf-file-name="Listener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/Listener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="76" column="1" lean-forward="true" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
+            <state relative-caret-position="-289">
+              <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -57,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetAnime.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GetAnime.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/commands/GetAnime.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
@@ -69,14 +51,49 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/commands/Test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="446">
+              <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#738#747#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PPListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/PPListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+            <state relative-caret-position="446">
+              <caret line="41" column="17" lean-forward="true" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetOsuProfile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/commands/GetOsuProfile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="45" lean-forward="true" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeaveVoice.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/commands/LeaveVoice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -93,28 +110,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OSUFollow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/commands/OSUFollow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SendBroadcast.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/commands/SendBroadcast.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="78" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SetName.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/commands/SetName.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -125,21 +120,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySQL.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/MySQL.java">
+      <file leaf-file-name="GetRanks.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/commands/GetRanks.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="141" column="40" lean-forward="true" selection-start-line="141" selection-start-column="40" selection-end-line="141" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OSUUnFollow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/commands/OSUUnFollow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+            <state relative-caret-position="732">
+              <caret line="104" column="5" lean-forward="true" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -185,10 +170,8 @@
         <option value="$PROJECT_DIR$/src/utils/CountryCodes.java" />
         <option value="$PROJECT_DIR$/src/commands/GetOsuSig.java" />
         <option value="$PROJECT_DIR$/src/utils/MyAnimeList.java" />
-        <option value="$PROJECT_DIR$/src/commands/GetOsuProfile.java" />
         <option value="$PROJECT_DIR$/src/utils/MAL.java" />
         <option value="$PROJECT_DIR$/src/commands/Test.java" />
-        <option value="$PROJECT_DIR$/src/commands/GetRanks.java" />
         <option value="$PROJECT_DIR$/src/commands/SetName.java" />
         <option value="$PROJECT_DIR$/src/utils/Listener.java" />
         <option value="$PROJECT_DIR$/src/commands/SetNotifierChannel.java" />
@@ -197,8 +180,10 @@
         <option value="$PROJECT_DIR$/src/ShiroBot.java" />
         <option value="$PROJECT_DIR$/src/commands/OSUUnFollow.java" />
         <option value="$PROJECT_DIR$/src/commands/OSUFollow.java" />
-        <option value="$PROJECT_DIR$/src/utils/PPListener.java" />
         <option value="$PROJECT_DIR$/src/commands/GetAnime.java" />
+        <option value="$PROJECT_DIR$/src/utils/PPListener.java" />
+        <option value="$PROJECT_DIR$/src/commands/GetOsuProfile.java" />
+        <option value="$PROJECT_DIR$/src/commands/GetRanks.java" />
       </list>
     </option>
   </component>
@@ -674,27 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/commands/GetOsuProfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="69" column="32" lean-forward="true" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/commands/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#738#747#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/commands/GetBitcoin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -703,39 +667,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/commands/LeaveVoice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="16" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/commands/GetRanks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/commands/getSettings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="44" column="59" lean-forward="false" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="59" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/Listener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="43" column="36" lean-forward="false" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -773,20 +709,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ShiroBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="65" column="41" lean-forward="false" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/commands/OSUFollow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -796,7 +724,7 @@
         <state relative-caret-position="253">
           <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -817,16 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/PPListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/commands/SetNotifierChannel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -841,6 +759,73 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commands/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#738#747#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ShiroBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="79" column="45" lean-forward="true" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/PPListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="41" column="17" lean-forward="true" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commands/GetOsuProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="45" lean-forward="true" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commands/LeaveVoice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/Listener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-289">
+          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commands/GetRanks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="732">
+          <caret line="104" column="5" lean-forward="true" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
