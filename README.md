@@ -1,2 +1,3 @@
 # ShiroBot
-Shiro Discord Bot
+Neeya Bot Discord
+ 
